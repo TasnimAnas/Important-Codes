@@ -1,51 +1,42 @@
 #include <bits/stdc++.h>
+#include<iostream>
 using namespace std;
 #define ll long long int
 #define endl '\n'
-
-void solve()
-{
+void solve(){
     ll n, k;
     cin >> n >> k;
     vector<ll> arr(k);
     for (auto &it : arr)
         cin >> it;
-    if (n - k != 0)
-    {
+    if (n - k != 0){
         ll first = arr[0] / (n - k + 1);
         if (arr[0] % (n - k + 1) != 0)
             first++;
         // cout << first << endl;
         int increaser = first;
-        for (int i = 1; i < k; i++)
-        {
+        for (int i = 1; i < k; i++){
             ll toBe = arr[i - 1] + increaser;
-            if (arr[i] < toBe)
-            {
+            if (arr[i] < toBe){
                 cout << "No" << endl;
                 return;
             }
-            else
-            {
+            else{
                 increaser = arr[i] - arr[i - 1];
             }
         }
-        cout << "Yes" << endl;
+        cout << "No" << endl;
     }
-    else
-    {
+    else{
         int increaser = arr[0];
-        for (int i = 1; i < k; i++)
-        {
+        for (int i = 1; i < k; i++){
             ll toBe = arr[i - 1] + increaser;
-            if (arr[i] < toBe)
-            {
+            if (arr[i] < toBe){
                 cout << "No" << endl;
                 return;
             }
-            else
-            {
-                increaser = arr[i] - arr[i - 1];
+            else{
+                decreaser= arr[i] - arr[i - 1];
             }
         }
         cout << "Yes" << endl;
