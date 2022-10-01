@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<stdlib.h>
+void duplicate_set_asc(int a[],int p,int r,int B[]){
+   int i,j,count;
+   int k=0;
+   for(i=p;i<=r;i++){
+        count=0;
+        for(j=p;j<=r;j++){
+            if(a[i]==a[j]){
+                count++;
+            }
+        }
+         if(count>1){
+                B[k]=a[i];
+                k++;
+            }
+     }
+     //B=(int *)realloc(B,k*sizeof(int));
+    printf("\nDuplicate elements in the array are:  ");
+    for(i=0;i<=k;i++){
+        printf("%3d",B[i]);
+    }
+}
+int main(){
+    int i,j,n,p,r;
+    printf("Enter the size of array: ");
+    scanf("%d",&n);
+    int *array=(int * )malloc(n*sizeof(int));
+    printf("\nEnter the elements: ");
+    for(i=0;i<n;i++){
+        scanf("%d",&array[i]);
+    }
+    printf("\nThe elements are: ");
+    for(i=0;i<n;i++){
+        printf("%3d",array[i]);
+    }
+    p=0;
+    r=n-1;
+    int *B=(int *)malloc(n*sizeof(int));
+    duplicate_set_asc(array,p,r,B);
+    return 0;
+}
