@@ -3,41 +3,33 @@
 #include <algorithm>
 
 using namespace std;
-int main()
-{
+int main(){
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--){
         int n;
         cin >> n;
         // cout<<n;
         int n_fi{};
         int ty[n];
         int temp;
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++){
             cin >> temp;
             if (temp == 0)
                 n_fi++;
             ty[i] = temp;
         }
-
         int fi_dmg[n_fi];
         int fr_dmg[n - n_fi];
-
         int temp2;
         int cntfi{0}, cntfr{0};
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++){
             cin >> temp2;
-            if (ty[i] == 0)
-            {
+            if (ty[i] == 0){
                 fi_dmg[cntfi] = temp2;
                 cntfi++;
             }
-            else if (ty[i] == 1)
-            {
+            else if (ty[i] == 1){
                 fr_dmg[cntfr] = temp2;
                 cntfr++;
             }
@@ -50,7 +42,6 @@ int main()
 
         sort(fi_dmg, fi_dmg + n_fi, greater<int>());
         sort(fr_dmg, fr_dmg + n - n_fi, greater<int>());
-
         int n_dub;
         if (n_fi != n - n_fi)
             n_dub = min(n_fi, n - n_fi);
@@ -59,16 +50,13 @@ int main()
 
         int left;
         int n_left;
-        if (n_fi > n - n_fi)
-        {
+        if (n_fi > n - n_fi){
             left = 0;
             n_left = 2 * n_fi - n;
         }
-        else if (n_fi < n - n_fi)
-        {
+        else if (n_fi < n - n_fi){
             left = 1;
-            n_left = n - 2 * n_fi;
-        }
+            n_left = n - 2 * n_fi;        }
         else
         {
             if (fi_dmg[n_fi - 1] >= fr_dmg[n - n_fi - 1])
