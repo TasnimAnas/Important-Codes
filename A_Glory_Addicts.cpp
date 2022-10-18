@@ -99,7 +99,7 @@ int main(){
                 else
                 {
                     sum += fr_dmg[i];
-                    // cout<<2* fr_dmg[i]<<" ";
+                    //cout<<2* fr_dmg[i]<<" ";
                 }
             }
             for (int i = 0; i < n_fi; i++)
