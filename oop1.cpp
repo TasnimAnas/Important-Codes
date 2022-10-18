@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 class check{
+    
     private:
         int count;
         static int static_count;        
