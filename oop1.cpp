@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 class check{
-    
+
     private:
         int count;
         static int static_count;        
@@ -19,6 +19,7 @@ class check{
 };
 int check::static_count;
 int main(){
+    
     check c1;
     check::display_count();
     check c2,c3;
