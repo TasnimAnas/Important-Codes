@@ -5,7 +5,7 @@ using namespace std;
 #define endl '\n'
 void solve(){
     ll n, k;
-    cin >> n >> k;
+    cin >> n >>k;
     vector<ll> arr(k);
     for (auto &it : arr)
         cin >> it;
